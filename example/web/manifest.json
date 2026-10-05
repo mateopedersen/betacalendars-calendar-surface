@@ -1,0 +1,10 @@
+{
+  "name": "Calendar Surface Example",
+  "short_name": "Calendar Surface",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6750a4",
+  "description": "Adaptive calendar surface examples",
+  "orientation": "portrait-primary"
+}

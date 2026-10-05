@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Resolve package dependencies
+        run: flutter pub get
+      - name: Check formatting
+        run: dart format --output=none --set-exit-if-changed .
+      - name: Analyze package
+        run: flutter analyze --fatal-infos
+      - name: Run tests
+        run: flutter test --reporter expanded
+      - name: Generate API docs
+        run: dart doc
+      - name: Validate package archive
+        run: flutter pub publish --dry-run
+      - name: Resolve example dependencies
+        working-directory: example
+        run: flutter pub get
+      - name: Build example for web with JavaScript
+        working-directory: example
+        run: flutter build web --release
+      - name: Build example for web with Wasm
+        working-directory: example
+        run: flutter build web --release --wasm

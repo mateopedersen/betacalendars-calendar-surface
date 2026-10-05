@@ -1,0 +1,41 @@
+name: betacalendars_calendar_surface
+description: Accessible and adaptive Flutter month-calendar surfaces with responsive grids, large-text support, RTL, keyboard navigation, and blank layouts.
+version: 0.1.0
+homepage: https://www.betacalendars.com/
+repository: https://github.com/mateopedersen/betacalendars-calendar-surface
+issue_tracker: https://github.com/mateopedersen/betacalendars-calendar-surface/issues
+topics:
+  - calendar
+  - flutter
+  - accessibility
+  - responsive
+  - widget
+screenshots:
+  - description: Adaptive month calendar with a Monday week start.
+    path: screenshots/month-natural-monday.png
+  - description: Natural calendar rows with a Sunday week start.
+    path: screenshots/month-natural-sunday.png
+  - description: Fixed six-row month calendar.
+    path: screenshots/month-six-rows.png
+  - description: Right-to-left month calendar with mirrored date order.
+    path: screenshots/month-rtl.png
+  - description: Month calendar at twice the normal text size.
+    path: screenshots/month-large-text.png
+  - description: Blank undated planner grid with no fabricated dates.
+    path: screenshots/blank-undated-grid.png
+  - description: Month calendar showing a selected date.
+    path: screenshots/month-selected-day.png
+  - description: Month calendar using a Tuesday week start.
+    path: screenshots/month-tuesday-start.png
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.35.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
